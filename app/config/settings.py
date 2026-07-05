@@ -4,8 +4,8 @@ from pydantic_settings import SettingsConfigDict, BaseSettings
 
 
 class Settings(BaseSettings):
-    # Path to root of a project
-    BASE_DIR = Path(__file__).resolve().parent.parent
+    # Path to the root of a project
+    BASE_DIR: Path = Path(__file__).resolve().parent.parent
 
     # AI Settings
     OPENAI_API_KEY: str
@@ -34,4 +34,3 @@ class Settings(BaseSettings):
     )
 
 settings = Settings()
-
