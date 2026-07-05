@@ -1,6 +1,6 @@
-def main():
-    print("Hello from ai-job-search-helper!")
+from fastapi import FastAPI
+from app.api.routers.health import router as health_router
 
+app = FastAPI()
 
-if __name__ == "__main__":
-    main()
+app.include_router(health_router)
