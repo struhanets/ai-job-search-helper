@@ -8,8 +8,10 @@ class Settings(BaseSettings):
     BASE_DIR: Path = Path(__file__).resolve().parent.parent
 
     # AI Settings
-    OPENAI_API_KEY: str
-    LLM_MODEL: str = "gpt-4o"
+    # OPENAI_API_KEY: str
+    GEMINI_API_KEY: str
+    # LLM_MODEL: str = "gpt-4o"
+    LLM_MODEL: str = "gemini-2.5-flash"
     TEMPERATURE: float = 0.0
 
     # Scraper Settings
