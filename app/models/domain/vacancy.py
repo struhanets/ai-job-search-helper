@@ -12,7 +12,7 @@ class Salary(BaseModel):
 
 class Vacancy(BaseModel):
     external_id: str | None = None
-    apply_url: str | None = None
+    apply_link: str | None = None
     source_url: str | None = None
 
     company: str | None = None
@@ -36,3 +36,14 @@ class Vacancy(BaseModel):
     )
     raw_text: str | None = None
 
+
+class VacancyAIData(Vacancy):
+    seniority: str | None = None
+    work_format: WorkFormat | None = None
+
+    salary: Salary | None = None
+    tech_stack: list[str] = Field(default_factory=list)
+    languages: list[LanguageSkill] = Field(default_factory=list)
+
+    posting_language: str | None = None
+    additional_info: str | None = None
