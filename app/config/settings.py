@@ -5,7 +5,7 @@ from pydantic_settings import SettingsConfigDict, BaseSettings
 
 class Settings(BaseSettings):
     # Path to the root of a project
-    BASE_DIR: Path = Path(__file__).resolve().parent.parent
+    BASE_DIR: Path = Path(__file__).resolve().parent.parent.parent
 
     # AI Settings
     # OPENAI_API_KEY: str

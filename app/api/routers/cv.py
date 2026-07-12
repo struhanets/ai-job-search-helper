@@ -1,7 +1,7 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
 
 from app.models.domain.candidate import CandidateProfile
-from app.parsers.cv_parser import ResumeParserService
+from app.services.cv_pars_service import ResumeParserService
 
 router = APIRouter()
 

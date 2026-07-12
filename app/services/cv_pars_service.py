@@ -8,7 +8,7 @@ class ResumeParserService:
         self.ai_client = AIClient()
         self.pdf_parser = PDFParser()
         # Загальний промпт, який класифікує поведінку самої моделі
-        self.system_prompt = (
+        self._system_prompt = (
             "You are an expert HR Assistant and Technical Recruiter. "
             "Your task is to extract structured information from a resume text. "
             "Be precise, especially with tech stack and years of experience. "
@@ -23,6 +23,6 @@ class ResumeParserService:
         profile = await self.ai_client.get_structured_data(
             prompt=prompt,
             response_model=CandidateProfile,
-            system_prompt=self.system_prompt
+            system_prompt=self._system_prompt
         )
         return profile

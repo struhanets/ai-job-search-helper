@@ -17,7 +17,8 @@ class DouClient:
         """
         Fetch the HTML page with vacancies from DOU.
         Args:
-
+            url (str): The target URL to fetch.
+            params (dict | None): Optional query parameters for the GET request.
         Returns:
             Raw HTML content of the search results page.
         """
