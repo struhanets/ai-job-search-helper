@@ -3,7 +3,8 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-
+# просте перетворення байтового коду який надходить нам в якості змісту файла
+# в текст, який можна буде потім розпарсити
 class PDFParser:
     @staticmethod
     def extract_text(file_content: bytes) -> str:

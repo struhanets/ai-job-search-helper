@@ -7,6 +7,7 @@ class ResumeParserService:
     def __init__(self):
         self.ai_client = AIClient()
         self.pdf_parser = PDFParser()
+        # Загальний промпт, який класифікує поведінку самої моделі
         self.system_prompt = (
             "You are an expert HR Assistant and Technical Recruiter. "
             "Your task is to extract structured information from a resume text. "
@@ -16,7 +17,7 @@ class ResumeParserService:
 
     async def parse_resume(self, file_content: bytes) -> CandidateProfile:
         raw_content = self.pdf_parser.extract_text(file_content)
-
+        # промпт який дає вказівку витягнути відповідну інфо з нашого файлу
         prompt = f"Extract candidate profile from this resume text:\n\n{raw_content}"
 
         profile = await self.ai_client.get_structured_data(

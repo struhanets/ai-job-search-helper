@@ -35,4 +35,7 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
+    # job portal urls
+    DOU_BASE_URL: str = "https://jobs.dou.ua"
+
 settings = Settings()
